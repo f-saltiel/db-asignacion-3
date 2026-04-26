@@ -3,21 +3,21 @@
   {
    "cell_type": "code",
    "execution_count": 1,
-   "id": "ff1a17f9",
+   "id": "4b44e73c",
    "metadata": {
     "_cell_guid": "b1076dfc-b9ad-4769-8c92-a6c4dae69d19",
     "_uuid": "8f2839f25d086af736a60e9eeb907d3b93b6e0e5",
     "execution": {
-     "iopub.execute_input": "2026-04-26T20:39:24.336080Z",
-     "iopub.status.busy": "2026-04-26T20:39:24.335632Z",
-     "iopub.status.idle": "2026-04-26T20:39:25.469273Z",
-     "shell.execute_reply": "2026-04-26T20:39:25.467983Z"
+     "iopub.execute_input": "2026-04-26T20:42:46.998363Z",
+     "iopub.status.busy": "2026-04-26T20:42:46.998030Z",
+     "iopub.status.idle": "2026-04-26T20:42:48.107233Z",
+     "shell.execute_reply": "2026-04-26T20:42:48.106082Z"
     },
     "papermill": {
-     "duration": 1.140199,
-     "end_time": "2026-04-26T20:39:25.471552+00:00",
+     "duration": 1.115172,
+     "end_time": "2026-04-26T20:42:48.109293+00:00",
      "exception": false,
-     "start_time": "2026-04-26T20:39:24.331353+00:00",
+     "start_time": "2026-04-26T20:42:46.994121+00:00",
      "status": "completed"
     },
     "tags": []
@@ -47,19 +47,19 @@
   {
    "cell_type": "code",
    "execution_count": 2,
-   "id": "9764bda4",
+   "id": "038d6f4d",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-04-26T20:39:25.476573Z",
-     "iopub.status.busy": "2026-04-26T20:39:25.475705Z",
-     "iopub.status.idle": "2026-04-26T20:39:26.270176Z",
-     "shell.execute_reply": "2026-04-26T20:39:26.268976Z"
+     "iopub.execute_input": "2026-04-26T20:42:48.114706Z",
+     "iopub.status.busy": "2026-04-26T20:42:48.113849Z",
+     "iopub.status.idle": "2026-04-26T20:42:48.952539Z",
+     "shell.execute_reply": "2026-04-26T20:42:48.951177Z"
     },
     "papermill": {
-     "duration": 0.799864,
-     "end_time": "2026-04-26T20:39:26.273034+00:00",
+     "duration": 0.84357,
+     "end_time": "2026-04-26T20:42:48.954736+00:00",
      "exception": false,
-     "start_time": "2026-04-26T20:39:25.473170+00:00",
+     "start_time": "2026-04-26T20:42:48.111166+00:00",
      "status": "completed"
     },
     "tags": []
@@ -117,6 +117,90 @@
     "print()\n",
     "print(credits_df.iloc[0])"
    ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "cfd8300a",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-04-26T20:42:48.960491Z",
+     "iopub.status.busy": "2026-04-26T20:42:48.959631Z",
+     "iopub.status.idle": "2026-04-26T20:42:48.967065Z",
+     "shell.execute_reply": "2026-04-26T20:42:48.965609Z"
+    },
+    "papermill": {
+     "duration": 0.013144,
+     "end_time": "2026-04-26T20:42:48.969840+00:00",
+     "exception": false,
+     "start_time": "2026-04-26T20:42:48.956696+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "def normalize_json_column(df, column, movie_id_col='id'):\n",
+    "    records = []\n",
+    "\n",
+    "    for _, row in df.iterrows():\n",
+    "        try:\n",
+    "            items = json.loads(row[column])\n",
+    "            for item in items:\n",
+    "                item['movie_id'] = row[movie_id_col]\n",
+    "                records.append(item)\n",
+    "        except:\n",
+    "            continue\n",
+    "\n",
+    "    return pd.DataFrame(records)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "faaaf857",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-04-26T20:42:48.974749Z",
+     "iopub.status.busy": "2026-04-26T20:42:48.974449Z",
+     "iopub.status.idle": "2026-04-26T20:42:52.759476Z",
+     "shell.execute_reply": "2026-04-26T20:42:52.758489Z"
+    },
+    "papermill": {
+     "duration": 3.789972,
+     "end_time": "2026-04-26T20:42:52.761590+00:00",
+     "exception": false,
+     "start_time": "2026-04-26T20:42:48.971618+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "    id             name  movie_id\n",
+      "0   28           Action     19995\n",
+      "1   12        Adventure     19995\n",
+      "2   14          Fantasy     19995\n",
+      "3  878  Science Fiction     19995\n",
+      "4   12        Adventure       285\n"
+     ]
+    }
+   ],
+   "source": [
+    "df_genres = normalize_json_column(movies_df, 'genres')\n",
+    "df_keywords = normalize_json_column(movies_df, 'keywords')\n",
+    "df_companies = normalize_json_column(movies_df, 'production_companies')\n",
+    "df_countries = normalize_json_column(movies_df, 'production_countries')\n",
+    "df_languages = normalize_json_column(movies_df, 'spoken_languages')\n",
+    "\n",
+    "df_cast = normalize_json_column(credits_df, 'cast', movie_id_col='movie_id')\n",
+    "df_crew = normalize_json_column(credits_df, 'crew', movie_id_col='movie_id')\n",
+    "\n",
+    "print(df_genres.head())"
+   ]
   }
  ],
  "metadata": {
@@ -155,14 +239,14 @@
   },
   "papermill": {
    "default_parameters": {},
-   "duration": 5.915603,
-   "end_time": "2026-04-26T20:39:26.796088+00:00",
+   "duration": 12.491412,
+   "end_time": "2026-04-26T20:42:55.949575+00:00",
    "environment_variables": {},
    "exception": null,
    "input_path": "__notebook__.ipynb",
    "output_path": "__notebook__.ipynb",
    "parameters": {},
-   "start_time": "2026-04-26T20:39:20.880485+00:00",
+   "start_time": "2026-04-26T20:42:43.458163+00:00",
    "version": "2.7.0"
   }
  },
