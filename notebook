@@ -3,21 +3,21 @@
   {
    "cell_type": "code",
    "execution_count": 1,
-   "id": "4b44e73c",
+   "id": "5835e042",
    "metadata": {
     "_cell_guid": "b1076dfc-b9ad-4769-8c92-a6c4dae69d19",
     "_uuid": "8f2839f25d086af736a60e9eeb907d3b93b6e0e5",
     "execution": {
-     "iopub.execute_input": "2026-04-26T20:42:46.998363Z",
-     "iopub.status.busy": "2026-04-26T20:42:46.998030Z",
-     "iopub.status.idle": "2026-04-26T20:42:48.107233Z",
-     "shell.execute_reply": "2026-04-26T20:42:48.106082Z"
+     "iopub.execute_input": "2026-04-26T21:13:56.707208Z",
+     "iopub.status.busy": "2026-04-26T21:13:56.706839Z",
+     "iopub.status.idle": "2026-04-26T21:13:57.881933Z",
+     "shell.execute_reply": "2026-04-26T21:13:57.880556Z"
     },
     "papermill": {
-     "duration": 1.115172,
-     "end_time": "2026-04-26T20:42:48.109293+00:00",
+     "duration": 1.184814,
+     "end_time": "2026-04-26T21:13:57.887173+00:00",
      "exception": false,
-     "start_time": "2026-04-26T20:42:46.994121+00:00",
+     "start_time": "2026-04-26T21:13:56.702359+00:00",
      "status": "completed"
     },
     "tags": []
@@ -47,19 +47,19 @@
   {
    "cell_type": "code",
    "execution_count": 2,
-   "id": "038d6f4d",
+   "id": "39ea796b",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-04-26T20:42:48.114706Z",
-     "iopub.status.busy": "2026-04-26T20:42:48.113849Z",
-     "iopub.status.idle": "2026-04-26T20:42:48.952539Z",
-     "shell.execute_reply": "2026-04-26T20:42:48.951177Z"
+     "iopub.execute_input": "2026-04-26T21:13:57.897697Z",
+     "iopub.status.busy": "2026-04-26T21:13:57.897204Z",
+     "iopub.status.idle": "2026-04-26T21:13:58.701750Z",
+     "shell.execute_reply": "2026-04-26T21:13:58.700290Z"
     },
     "papermill": {
-     "duration": 0.84357,
-     "end_time": "2026-04-26T20:42:48.954736+00:00",
+     "duration": 0.812654,
+     "end_time": "2026-04-26T21:13:58.704017+00:00",
      "exception": false,
-     "start_time": "2026-04-26T20:42:48.111166+00:00",
+     "start_time": "2026-04-26T21:13:57.891363+00:00",
      "status": "completed"
     },
     "tags": []
@@ -121,19 +121,19 @@
   {
    "cell_type": "code",
    "execution_count": 3,
-   "id": "cfd8300a",
+   "id": "41a72c10",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-04-26T20:42:48.960491Z",
-     "iopub.status.busy": "2026-04-26T20:42:48.959631Z",
-     "iopub.status.idle": "2026-04-26T20:42:48.967065Z",
-     "shell.execute_reply": "2026-04-26T20:42:48.965609Z"
+     "iopub.execute_input": "2026-04-26T21:13:58.711255Z",
+     "iopub.status.busy": "2026-04-26T21:13:58.710829Z",
+     "iopub.status.idle": "2026-04-26T21:13:58.717290Z",
+     "shell.execute_reply": "2026-04-26T21:13:58.715992Z"
     },
     "papermill": {
-     "duration": 0.013144,
-     "end_time": "2026-04-26T20:42:48.969840+00:00",
+     "duration": 0.013243,
+     "end_time": "2026-04-26T21:13:58.719601+00:00",
      "exception": false,
-     "start_time": "2026-04-26T20:42:48.956696+00:00",
+     "start_time": "2026-04-26T21:13:58.706358+00:00",
      "status": "completed"
     },
     "tags": []
@@ -158,19 +158,19 @@
   {
    "cell_type": "code",
    "execution_count": 4,
-   "id": "faaaf857",
+   "id": "3323d973",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-04-26T20:42:48.974749Z",
-     "iopub.status.busy": "2026-04-26T20:42:48.974449Z",
-     "iopub.status.idle": "2026-04-26T20:42:52.759476Z",
-     "shell.execute_reply": "2026-04-26T20:42:52.758489Z"
+     "iopub.execute_input": "2026-04-26T21:13:58.726378Z",
+     "iopub.status.busy": "2026-04-26T21:13:58.725542Z",
+     "iopub.status.idle": "2026-04-26T21:14:02.110090Z",
+     "shell.execute_reply": "2026-04-26T21:14:02.108903Z"
     },
     "papermill": {
-     "duration": 3.789972,
-     "end_time": "2026-04-26T20:42:52.761590+00:00",
+     "duration": 3.390427,
+     "end_time": "2026-04-26T21:14:02.112329+00:00",
      "exception": false,
-     "start_time": "2026-04-26T20:42:48.971618+00:00",
+     "start_time": "2026-04-26T21:13:58.721902+00:00",
      "status": "completed"
     },
     "tags": []
@@ -200,6 +200,207 @@
     "df_crew = normalize_json_column(credits_df, 'crew', movie_id_col='movie_id')\n",
     "\n",
     "print(df_genres.head())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "ce0d21f2",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-04-26T21:14:02.118740Z",
+     "iopub.status.busy": "2026-04-26T21:14:02.118223Z",
+     "iopub.status.idle": "2026-04-26T21:14:02.225053Z",
+     "shell.execute_reply": "2026-04-26T21:14:02.224049Z"
+    },
+    "papermill": {
+     "duration": 0.112757,
+     "end_time": "2026-04-26T21:14:02.227312+00:00",
+     "exception": false,
+     "start_time": "2026-04-26T21:14:02.114555+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "movies = movies_df[[\n",
+    "    'id', 'title', 'original_title', 'original_language', 'overview',\n",
+    "    'release_date', 'budget', 'revenue', 'runtime', 'popularity',\n",
+    "    'vote_average', 'vote_count', 'status', 'homepage', 'tagline'\n",
+    "]].copy()\n",
+    "\n",
+    "movies.rename(columns={'id': 'movie_id'}, inplace=True)\n",
+    "\n",
+    "\n",
+    "\n",
+    "genres = df_genres[['id', 'name']].drop_duplicates()\n",
+    "genres.columns = ['genre_id', 'genre_name']\n",
+    "\n",
+    "movie_genres = df_genres[['movie_id', 'id']]\n",
+    "movie_genres.columns = ['movie_id', 'genre_id']\n",
+    "\n",
+    "\n",
+    "\n",
+    "keywords = df_keywords[['id', 'name']].drop_duplicates()\n",
+    "keywords.columns = ['keyword_id', 'keyword_name']\n",
+    "\n",
+    "movie_keywords = df_keywords[['movie_id', 'id']]\n",
+    "movie_keywords.columns = ['movie_id', 'keyword_id']\n",
+    "\n",
+    "\n",
+    "\n",
+    "companies = df_companies[['id', 'name']].drop_duplicates()\n",
+    "companies.columns = ['company_id', 'company_name']\n",
+    "\n",
+    "movie_companies = df_companies[['movie_id', 'id']]\n",
+    "movie_companies.columns = ['movie_id', 'company_id']\n",
+    "\n",
+    "\n",
+    "\n",
+    "countries = df_countries[['iso_3166_1', 'name']].drop_duplicates()\n",
+    "countries.columns = ['country_code', 'country_name']\n",
+    "\n",
+    "movie_countries = df_countries[['movie_id', 'iso_3166_1']]\n",
+    "movie_countries.columns = ['movie_id', 'country_code']\n",
+    "\n",
+    "\n",
+    "\n",
+    "languages = df_languages[['iso_639_1', 'name']].drop_duplicates()\n",
+    "languages.columns = ['language_code', 'language_name']\n",
+    "\n",
+    "movie_languages = df_languages[['movie_id', 'iso_639_1']]\n",
+    "movie_languages.columns = ['movie_id', 'language_code']\n",
+    "\n",
+    "\n",
+    "\n",
+    "\n",
+    "people = df_cast[['id', 'name']].drop_duplicates()\n",
+    "people.columns = ['person_id', 'person_name']\n",
+    "\n",
+    "movie_cast = df_cast[['movie_id', 'id', 'character', 'order']]\n",
+    "movie_cast.columns = ['movie_id', 'person_id', 'character_name', 'cast_order']"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "a79f8cb4",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-04-26T21:14:02.234046Z",
+     "iopub.status.busy": "2026-04-26T21:14:02.233608Z",
+     "iopub.status.idle": "2026-04-26T21:14:02.240758Z",
+     "shell.execute_reply": "2026-04-26T21:14:02.239338Z"
+    },
+    "papermill": {
+     "duration": 0.01344,
+     "end_time": "2026-04-26T21:14:02.242961+00:00",
+     "exception": false,
+     "start_time": "2026-04-26T21:14:02.229521+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "schema = \"\"\"\n",
+    "PRAGMA foreign_keys = ON;\n",
+    "\n",
+    "CREATE TABLE IF NOT EXISTS movies (\n",
+    "    movie_id INTEGER PRIMARY KEY,\n",
+    "    title TEXT,\n",
+    "    original_title TEXT,\n",
+    "    original_language TEXT,\n",
+    "    overview TEXT,\n",
+    "    release_date TEXT,\n",
+    "    budget INTEGER,\n",
+    "    revenue INTEGER,\n",
+    "    runtime REAL,\n",
+    "    popularity REAL,\n",
+    "    vote_average REAL,\n",
+    "    vote_count INTEGER,\n",
+    "    status TEXT,\n",
+    "    homepage TEXT,\n",
+    "    tagline TEXT\n",
+    ");\n",
+    "\n",
+    "CREATE TABLE IF NOT EXISTS genres (\n",
+    "    genre_id INTEGER PRIMARY KEY,\n",
+    "    genre_name TEXT\n",
+    ");\n",
+    "\n",
+    "CREATE TABLE IF NOT EXISTS movie_genres (\n",
+    "    movie_id INTEGER,\n",
+    "    genre_id INTEGER,\n",
+    "    FOREIGN KEY(movie_id) REFERENCES movies(movie_id),\n",
+    "    FOREIGN KEY(genre_id) REFERENCES genres(genre_id)\n",
+    ");\n",
+    "\n",
+    "CREATE TABLE IF NOT EXISTS languages (\n",
+    "    language_code TEXT PRIMARY KEY,\n",
+    "    language_name TEXT\n",
+    ");\n",
+    "\n",
+    "CREATE TABLE IF NOT EXISTS movie_languages (\n",
+    "    movie_id INTEGER,\n",
+    "    language_code TEXT,\n",
+    "    FOREIGN KEY(movie_id) REFERENCES movies(movie_id),\n",
+    "    FOREIGN KEY(language_code) REFERENCES languages(language_code)\n",
+    ");\n",
+    "\n",
+    "CREATE TABLE IF NOT EXISTS people (\n",
+    "    person_id INTEGER PRIMARY KEY,\n",
+    "    person_name TEXT\n",
+    ");\n",
+    "\n",
+    "CREATE TABLE IF NOT EXISTS movie_cast (\n",
+    "    movie_id INTEGER,\n",
+    "    person_id INTEGER,\n",
+    "    character_name TEXT,\n",
+    "    cast_order INTEGER,\n",
+    "    FOREIGN KEY(movie_id) REFERENCES movies(movie_id),\n",
+    "    FOREIGN KEY(person_id) REFERENCES people(person_id)\n",
+    ");\n",
+    "\"\"\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "d42023dd",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-04-26T21:14:02.250057Z",
+     "iopub.status.busy": "2026-04-26T21:14:02.249699Z",
+     "iopub.status.idle": "2026-04-26T21:14:02.376848Z",
+     "shell.execute_reply": "2026-04-26T21:14:02.375631Z"
+    },
+    "papermill": {
+     "duration": 0.13387,
+     "end_time": "2026-04-26T21:14:02.379119+00:00",
+     "exception": false,
+     "start_time": "2026-04-26T21:14:02.245249+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "<sqlite3.Cursor at 0x7af4d669eb40>"
+      ]
+     },
+     "execution_count": 7,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "conn = sqlite3.connect('/kaggle/working/tmdb.db')\n",
+    "cursor = conn.cursor()\n",
+    "cursor.executescript(schema)"
    ]
   }
  ],
@@ -239,14 +440,14 @@
   },
   "papermill": {
    "default_parameters": {},
-   "duration": 12.491412,
-   "end_time": "2026-04-26T20:42:55.949575+00:00",
+   "duration": 9.720896,
+   "end_time": "2026-04-26T21:14:03.003914+00:00",
    "environment_variables": {},
    "exception": null,
    "input_path": "__notebook__.ipynb",
    "output_path": "__notebook__.ipynb",
    "parameters": {},
-   "start_time": "2026-04-26T20:42:43.458163+00:00",
+   "start_time": "2026-04-26T21:13:53.283018+00:00",
    "version": "2.7.0"
   }
  },
