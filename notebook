@@ -1,0 +1,168 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "3495b7a2",
+   "metadata": {
+    "_cell_guid": "b1076dfc-b9ad-4769-8c92-a6c4dae69d19",
+    "_uuid": "8f2839f25d086af736a60e9eeb907d3b93b6e0e5",
+    "execution": {
+     "iopub.execute_input": "2026-04-26T19:44:55.241982Z",
+     "iopub.status.busy": "2026-04-26T19:44:55.240832Z",
+     "iopub.status.idle": "2026-04-26T19:44:56.425657Z",
+     "shell.execute_reply": "2026-04-26T19:44:56.424563Z"
+    },
+    "papermill": {
+     "duration": 1.191466,
+     "end_time": "2026-04-26T19:44:56.428073+00:00",
+     "exception": false,
+     "start_time": "2026-04-26T19:44:55.236607+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "/kaggle/input/datasets/organizations/tmdb/tmdb-movie-metadata/tmdb_5000_movies.csv\n",
+      "/kaggle/input/datasets/organizations/tmdb/tmdb-movie-metadata/tmdb_5000_credits.csv\n"
+     ]
+    }
+   ],
+   "source": [
+    "# This Python 3 environment comes with many helpful analytics libraries installed\n",
+    "# It is defined by the kaggle/python Docker image: https://github.com/kaggle/docker-python\n",
+    "# For example, here's several helpful packages to load\n",
+    "\n",
+    "import numpy as np # linear algebra\n",
+    "import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)\n",
+    "import sqlite3\n",
+    "import json\n",
+    "\n",
+    "# Input data files are available in the read-only \"../input/\" directory\n",
+    "# For example, running this (by clicking run or pressing Shift+Enter) will list all files under the input directory\n",
+    "\n",
+    "import os\n",
+    "for dirname, _, filenames in os.walk('/kaggle/input'):\n",
+    "    for filename in filenames:\n",
+    "        print(os.path.join(dirname, filename))\n",
+    "\n",
+    "# You can write up to 20GB to the current directory (/kaggle/working/) that gets preserved as output when you create a version using \"Save & Run All\" \n",
+    "# You can also write temporary files to /kaggle/temp/, but they won't be saved outside of the current session"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "320e9ec3",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-04-26T19:44:56.433574Z",
+     "iopub.status.busy": "2026-04-26T19:44:56.432471Z",
+     "iopub.status.idle": "2026-04-26T19:44:56.640707Z",
+     "shell.execute_reply": "2026-04-26T19:44:56.639397Z"
+    },
+    "papermill": {
+     "duration": 0.213443,
+     "end_time": "2026-04-26T19:44:56.643182+00:00",
+     "exception": false,
+     "start_time": "2026-04-26T19:44:56.429739+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Index(['budget', 'genres', 'homepage', 'id', 'keywords', 'original_language',\n",
+      "       'original_title', 'overview', 'popularity', 'production_companies',\n",
+      "       'production_countries', 'release_date', 'revenue', 'runtime',\n",
+      "       'spoken_languages', 'status', 'tagline', 'title', 'vote_average',\n",
+      "       'vote_count'],\n",
+      "      dtype='object')\n",
+      "budget                                                          237000000\n",
+      "genres                  [{\"id\": 28, \"name\": \"Action\"}, {\"id\": 12, \"nam...\n",
+      "homepage                                      http://www.avatarmovie.com/\n",
+      "id                                                                  19995\n",
+      "keywords                [{\"id\": 1463, \"name\": \"culture clash\"}, {\"id\":...\n",
+      "original_language                                                      en\n",
+      "original_title                                                     Avatar\n",
+      "overview                In the 22nd century, a paraplegic Marine is di...\n",
+      "popularity                                                     150.437577\n",
+      "production_companies    [{\"name\": \"Ingenious Film Partners\", \"id\": 289...\n",
+      "production_countries    [{\"iso_3166_1\": \"US\", \"name\": \"United States o...\n",
+      "release_date                                                   2009-12-10\n",
+      "revenue                                                        2787965087\n",
+      "runtime                                                             162.0\n",
+      "spoken_languages        [{\"iso_639_1\": \"en\", \"name\": \"English\"}, {\"iso...\n",
+      "status                                                           Released\n",
+      "tagline                                       Enter the World of Pandora.\n",
+      "title                                                              Avatar\n",
+      "vote_average                                                          7.2\n",
+      "vote_count                                                          11800\n",
+      "Name: 0, dtype: object\n"
+     ]
+    }
+   ],
+   "source": [
+    "df_movies = pd.read_csv('/kaggle/input/datasets/organizations/tmdb/tmdb-movie-metadata/tmdb_5000_movies.csv')\n",
+    "print(df_movies.columns)\n",
+    "print(df_movies.iloc[0])"
+   ]
+  }
+ ],
+ "metadata": {
+  "kaggle": {
+   "accelerator": "none",
+   "dataSources": [
+    {
+     "databundleVersionId": 4508,
+     "datasetId": 138,
+     "sourceId": 4508,
+     "sourceType": "datasetVersion"
+    }
+   ],
+   "dockerImageVersionId": 31328,
+   "isGpuEnabled": false,
+   "isInternetEnabled": false,
+   "language": "python",
+   "sourceType": "notebook"
+  },
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.12"
+  },
+  "papermill": {
+   "default_parameters": {},
+   "duration": 5.656834,
+   "end_time": "2026-04-26T19:44:57.166523+00:00",
+   "environment_variables": {},
+   "exception": null,
+   "input_path": "__notebook__.ipynb",
+   "output_path": "__notebook__.ipynb",
+   "parameters": {},
+   "start_time": "2026-04-26T19:44:51.509689+00:00",
+   "version": "2.7.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
